@@ -16,7 +16,7 @@ namespace KitchenIceCreamParlor.Customs.Dishes
     {
         public override string UniqueNameID => "ToppingsDish";
         public override DishType Type => DishType.Extra;
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.LargeDecrease;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
         public override CardType CardType => CardType.Default;
         public override Unlock.RewardLevel ExpReward => Unlock.RewardLevel.Medium;
         public override UnlockGroup UnlockGroup => UnlockGroup.Dish;

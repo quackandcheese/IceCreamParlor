@@ -11,6 +11,9 @@ using KitchenIceCreamParlor.Customs.Items;
 using UnityEngine;
 using KitchenLogger = KitchenLib.Logging.KitchenLogger;
 using KitchenLib.Interfaces;
+using KitchenData;
+using KitchenLib.Utils;
+using ApplianceLib.Api;
 
 namespace KitchenIceCreamParlor
 {
@@ -63,8 +66,18 @@ namespace KitchenIceCreamParlor
         /*
          * This is the OnUpdate method. This is called every frame after OnInitialise().
          */
+        private bool colorblindSetup = false;
         protected override void OnUpdate()
         {
+            if (!colorblindSetup)
+            {
+                GameObject toppingsProvider = ((Appliance)GDOUtils.GetCustomGameDataObject<ToppingsProvider>().GameDataObject).Prefab;
+                toppingsProvider.GetChild("Colour Blind").AddApplianceColorblindLabel("N");
+                toppingsProvider.GetChild("Colour Blind (1)").AddApplianceColorblindLabel("F");
+                toppingsProvider.GetChild("Colour Blind (2)").AddApplianceColorblindLabel("Sp");
+
+                colorblindSetup = true;
+            }
         }
 
         /*
