@@ -62,7 +62,7 @@ namespace KitchenIceCreamParlor
         {
             Logger.LogWarning($"{MOD_GUID} v{MOD_VERSION} in use!");
         }
-
+        
         /*
          * This is the OnUpdate method. This is called every frame after OnInitialise().
          */
