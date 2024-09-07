@@ -5,6 +5,7 @@
 		<AssemblyName>$(MSBuildProjectName)</AssemblyName>
 		<AssetBundlePath>UnityProject - IceCreamParlor\content\mod.assets</AssetBundlePath>
 		<LangVersion>latest</LangVersion>
+		<RootNamespace>Kitchen$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>

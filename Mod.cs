@@ -10,6 +10,7 @@ using KitchenIceCreamParlor.Customs.ItemGroups;
 using KitchenIceCreamParlor.Customs.Items;
 using UnityEngine;
 using KitchenLogger = KitchenLib.Logging.KitchenLogger;
+using KitchenLib.Interfaces;
 
 namespace KitchenIceCreamParlor
 {
@@ -20,7 +21,7 @@ namespace KitchenIceCreamParlor
      * BaseMod is a class from KitchenLib that contains all of the base functionality for your mod.
      * IModSystem is an interface from KitchenMods that ensures that your mod is also loaded as an ECS system.
      */
-    public class Mod : BaseMod, IModSystem
+    public class Mod : BaseMod, IModSystem, IAutoRegisterAll
     {
         /*
          * This is information related to your mod.
@@ -80,10 +81,10 @@ namespace KitchenIceCreamParlor
              *
              * You can also add IAutoRegsiterAll to your base class to automatically register all GameDataObjects in the assembly.
              */
-            AddGameDataObject<CakeConeProvider>();
+            /*AddGameDataObject<CakeConeProvider>();
             AddGameDataObject<IceCreamDish>();
             AddGameDataObject<IceCreamCone>();
-            AddGameDataObject<CakeCone>();
+            AddGameDataObject<CakeCone>();*/
         }
     }
 }

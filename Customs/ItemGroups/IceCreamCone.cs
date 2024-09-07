@@ -38,7 +38,22 @@ namespace KitchenIceCreamParlor.Customs.ItemGroups
                     (Item)GDOUtils.GetExistingGDO(ItemReferences.IceCreamStrawberry)
                 },
                 Min = 1,
-                Max = 1
+                Max = 1,
+                IsMandatory = true
+            },
+            new ItemGroup.ItemSet
+            {
+                Items = new List<Item>
+                {
+                    // If want to add new flavors, set itemset to Requires unlock and add UnlockIngredients to base dish
+                    (Item)GDOUtils.GetExistingGDO(ItemReferences.NutsIngredient),
+                    (Item)GDOUtils.GetCustomGameDataObject<FudgeSauce>().GameDataObject,
+                    (Item)GDOUtils.GetCustomGameDataObject<Sprinkles>().GameDataObject
+                },
+                Min = 0,
+                Max = 1,
+                RequiresUnlock = true,
+                IsMandatory = false
             }
         };
 
@@ -79,6 +94,33 @@ namespace KitchenIceCreamParlor.Customs.ItemGroups
                     Item = (Item)GDOUtils.GetCustomGameDataObject<CakeCone>().GameDataObject,
                     GameObject = GameObjectUtils.GetChildObject(prefab, "Cake Cone"),
                     DrawAll = true
+                },
+                new()
+                {
+                    Item = (Item)GDOUtils.GetCustomGameDataObject<FudgeSauce>().GameDataObject,
+                    Objects = new() 
+                    {
+                        GameObjectUtils.GetChildObject(prefab, "Scoop1/Fudge Sauce"),
+                    },
+                    DrawAll = true
+                },
+                new()
+                {
+                    Item = (Item)GDOUtils.GetCustomGameDataObject<Sprinkles>().GameDataObject,
+                    Objects = new()
+                    {
+                        GameObjectUtils.GetChildObject(prefab, "Scoop1/Sprinkles"),
+                    },
+                    DrawAll = true
+                },
+                new()
+                {
+                    Item = (Item)GDOUtils.GetExistingGDO(ItemReferences.NutsIngredient),
+                    Objects = new()
+                    {
+                        GameObjectUtils.GetChildObject(prefab, "Scoop1/Nuts"),
+                    },
+                    DrawAll = true
                 }
             };
 
@@ -103,6 +145,21 @@ namespace KitchenIceCreamParlor.Customs.ItemGroups
                 {
                     Item = (Item)GDOUtils.GetExistingGDO(ItemReferences.IceCreamVanilla),
                     Text = "V"
+                },
+                new()
+                {
+                    Item = (Item)GDOUtils.GetCustomGameDataObject<FudgeSauce>().GameDataObject,
+                    Text = "F"
+                },
+                new()
+                {
+                    Item = (Item)GDOUtils.GetCustomGameDataObject<Sprinkles>().GameDataObject,
+                    Text = "Sp"
+                },
+                new()
+                {
+                    Item = (Item)GDOUtils.GetExistingGDO(ItemReferences.NutsIngredient),
+                    Text = "N"
                 },
             };
         }

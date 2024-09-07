@@ -27,7 +27,7 @@ namespace KitchenIceCreamParlor.Customs.Dishes
         public override CardType CardType => CardType.Default;
 
         // CustomerMultiplier - Determines the customer difference this Unlock provides.
-        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.SmallDecrease;
+        public override DishCustomerChange CustomerMultiplier => DishCustomerChange.LargeIncrease;
 
         // Type - This is used to decide what phase this Dish should be ordered.
         public override DishType Type => DishType.Base;
@@ -40,6 +40,7 @@ namespace KitchenIceCreamParlor.Customs.Dishes
         {
             "I scream you scream",
         };
+        public override bool IsMainThatDoesNotNeedPlates => true;
 
         // MinimumIngredients - The ingredients required to make this Dish.
         public override HashSet<Item> MinimumIngredients => new HashSet<Item>()
@@ -78,7 +79,7 @@ namespace KitchenIceCreamParlor.Customs.Dishes
         {
             (Locale.English, new UnlockInfo
             {
-                Name = "Ice Cream",
+                Name = "Ice Cream Cones",
                 Description = "Adds ice cream as a main",
                 FlavourText = ""
             })
